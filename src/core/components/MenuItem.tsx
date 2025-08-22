@@ -64,9 +64,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
         paddingX: "10px",
         marginBottom: 0.5,
         borderRadius: 1,
-        ...(isActive ? { bgcolor: "#1B2333" } : undefined),
+        ...(isActive ? { bgcolor: "bg.dark" } : undefined),
         ":hover": {
-          bgcolor: "#1B2333",
+          bgcolor: "bg.dark",
         },
         "&:focus": {
           boxShadow: "inset 0px 0px 0px 2px #667085",

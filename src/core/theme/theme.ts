@@ -1,40 +1,39 @@
 // theme.js
 import { createTheme } from "@mui/material/styles";
 
-type TypographyColor = {
-  primary: string;
-  secondary: string;
-  tertiary: string;
-  subtle: string;
-  error: string;
-  warning: string;
-  success: string;
-  info: string;
-  onColor: string;
-};
+declare module "@mui/material/styles" {
+  interface Palette {
+    bg: Palette["primary"];
+    border: Palette["primary"];
+  }
+  interface PaletteOptions {
+    bg: PaletteOptions["primary"];
+    border: PaletteOptions["primary"];
+  }
+}
 
 const theme = createTheme({
   palette: {
     primary: {
-      // main: "#2196f3",
       main: "#6130C4",
       light: "#e3f2fd",
-      dark: "#1e88e5",
+      dark: "#4e269d",
     },
     secondary: {
-      light: "#ede7f6",
-      main: "#673ab7",
-      dark: "#5e35b1",
+      main: "#ECE3FF",
+      dark: "#D4C1FC",
+      light: "#ECE3FF",
+      contrastText: "#6131C4",
     },
     success: {
-      light: "#b9f6ca",
-      main: "#00e676",
-      dark: "#00c853",
+      light: "#a5dba7",
+      main: "#378C3B",
+      dark: "#215423",
     },
     error: {
-      light: "#ef9a9a",
+      light: "#fbb4af",
       main: "#f44336",
-      dark: "#c62828",
+      dark: "#a91409",
     },
     warning: {
       light: "#fbe9e7",
@@ -60,6 +59,20 @@ const theme = createTheme({
       700: "#616161",
       800: "#424242",
       900: "#101828",
+    },
+    bg: {
+      main: "#F1F4F7",
+      light: "#F1F4F7",
+      dark: "#1B2333",
+      contrastText: "#000000",
+    },
+    border: {
+      main: "#6131C4",
+      light: "#DCE4EC",
+    },
+    text: {
+      primary: "#101828",
+      secondary: "#475467",
     },
   },
   typography: {

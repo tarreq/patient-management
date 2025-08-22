@@ -5,9 +5,9 @@ import { winkFace } from "../../../assets/images";
 const Home = () => {
   return (
     <Box
-      height="100%"
+      height="100vh"
       width="100%"
-      bgcolor="#F1F4F7"
+      bgcolor="bg.main"
       p={2}
       sx={{ flex: 1, overflowY: "overlay" }}
       display="flex"
@@ -17,11 +17,11 @@ const Home = () => {
     >
       <img src={winkFace} alt="face" width={50} height={50} />
       <Box mt={1} textAlign="center">
-        <Typography variant="body1" color="primary">
+        <Typography variant="body2" color="primary">
           We're preparing something special for you,
         </Typography>
-        <Typography variant="body1" color="primary">
-          explore patients menu for now!
+        <Typography variant="body2" color="primary">
+          explore patients section for now!
         </Typography>
       </Box>
     </Box>
