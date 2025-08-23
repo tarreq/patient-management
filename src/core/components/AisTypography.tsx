@@ -1,7 +1,5 @@
 import React from "react";
 import { Typography, type TypographyProps } from "@mui/material";
-import type theme from "../theme/theme";
-// import { lightTheme } from "../../theme/lightTheme";
 
 type FontWeight = "regular" | "medium" | "semiBold" | "bold" | "black";
 
@@ -13,19 +11,11 @@ export const fontWeightMap: Record<FontWeight, number> = {
   black: 900,
 };
 
-type NestedKeyOf<ObjectType extends object> = {
-  [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
-    ? `${Key}.${NestedKeyOf<ObjectType[Key]>}`
-    : `${Key}`;
-}[keyof ObjectType & (string | number)];
-
 export interface AisTypographyProps
   extends Omit<TypographyProps, "color" | "fontFamily"> {
   fontWeight?: FontWeight;
-  //   fontFamily?: "Inter Tight" | "gustavo" | "Hello America";
   fontFamily?: "Roboto";
-  //   color?: NestedKeyOf<typeof lightTheme.text>;
-  color?: NestedKeyOf<typeof theme.palette.text>;
+  color?: string;
   whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 }
 

@@ -7,6 +7,8 @@ import { ReportProblem } from "@mui/icons-material";
 import supabase from "../../../core/providers/supabase";
 import { useNotify } from "../../../core/hooks/useNotify";
 
+// TODO: This is a temporary type for the patient data.
+// We should use a proper type from the backend.
 export type Patient = {
   id: string;
   createdAt: string;
