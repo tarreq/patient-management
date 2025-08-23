@@ -1,69 +1,148 @@
-# React + TypeScript + Vite
+# Patient Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based patient management application built with TypeScript, Vite, and Material-UI. This application provides a comprehensive solution for managing patient records, appointments, and healthcare data.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+Before you begin, ensure you have the following installed on your machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- [Yarn](https://yarnpkg.com/) (recommended) or [npm](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Clone the Repository
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository to your local machine:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   git clone https://github.com/tarreq/patient-management.git
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd patient-management
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   yarn install
+   # or if using npm:
+   # npm install
+   ```
+
+4. **Start the development server:**
+
+   ```bash
+   yarn start
+   # or if using npm:
+   # npm start
+   ```
+
+5. **Open your browser and navigate to:**
+   ```
+   http://localhost:5173
+   ```
+
+## 🛠️ Available Scripts
+
+- **`yarn start`** - Start the development server
+- **`yarn build`** - Build the application for production
+- **`yarn preview`** - Preview the production build locally
+- **`yarn lint`** - Run ESLint to check code quality
+- **`yarn lint:fix`** - Automatically fix ESLint issues
+
+## 🏗️ Project Structure
+
+```
+patient-management/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/            # Images and SVG files
+│   ├── core/              # Core application components
+│   │   ├── components/    # Reusable UI components
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── providers/     # Context providers
+│   │   ├── router/        # Routing configuration
+│   │   └── theme/         # Material-UI theme
+│   ├── features/          # Feature-based modules
+│   │   ├── auth/          # Authentication views
+│   │   ├── home/          # Home page views
+│   │   └── patients/      # Patient management views
+│   └── main.tsx           # Application entry point
+├── package.json            # Dependencies and scripts
+└── README.md              # This file
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧰 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend Framework:** React 19 with TypeScript
+- **Build Tool:** Vite
+- **UI Library:** Material-UI (MUI)
+- **Backend:** Supabase
+- **Form Handling:** Formik + Yup validation
+- **Routing:** React Router DOM
+- **Styling:** Emotion (CSS-in-JS)
+- **Code Quality:** ESLint + Prettier
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🔧 Development
+
+### Code Quality
+
+This project uses ESLint and Prettier for code quality and formatting:
+
+```bash
+# Check for linting issues
+yarn lint
+
+# Automatically fix linting issues
+yarn lint:fix
 ```
+
+### TypeScript Configuration
+
+The project includes TypeScript configuration files:
+
+- `tsconfig.json` - Base TypeScript configuration
+- `tsconfig.app.json` - Application-specific configuration
+- `tsconfig.node.json` - Node.js environment configuration
+
+## 📱 Features
+
+- **Authentication System** - Secure login and registration
+- **Patient Management** - Add, edit, and view patient records
+- **Responsive Design** - Mobile-friendly interface
+- **Modern UI/UX** - Clean and intuitive user interface
+
+## 🚀 Deployment
+
+### Building for Production
+
+```bash
+yarn build
+```
+
+The built files will be available in the `dist/` directory.
+
+### Preview Production Build
+
+```bash
+yarn preview
+```
+
+This will serve the production build locally for testing.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
