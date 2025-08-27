@@ -1,6 +1,7 @@
 import supabase from "./supabase";
 import { Navigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { Box, CircularProgress } from "@mui/material";
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,16 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100vh"
+      >
+        <CircularProgress />
+      </Box>
+    );
   } else if (authenticated) {
     return <>{children}</>;
   } else {
